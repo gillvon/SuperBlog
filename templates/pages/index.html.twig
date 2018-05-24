@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Homepage - SuperBlog {% endblock %}
+
+{% block body %}
+
+    <div class="container my-5">
+        <h1 class="mb-5 text-white">Welcome to SuperBlog</h1>
+        {% if blogposts %}
+        <div class="card-columns mb-5">
+            {% for blogpost in blogposts %}
+                <a href="/blog/{{ blogpost.id }}" class="card">
+                    {# <img class="card-img-top" src="https://via.placeholder.com/1920x1080" alt="Card image cap"> #}
+                    <div class="card-body">
+                    <h5 class="card-title">{{ blogpost.title }}</h5>
+                    <p class="card-text">{{ blogpost.content }}</p>
+                    <p class="card-text">
+                        <small class="text-muted "><i class="fas fa-eye"></i> {{ blogpost.views }} <br></small> 
+                        <small class="text-muted">Posted {{ blogpost.date }} ago</small></p>                
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        {% else %}
+
+            <div class="alert alert-info mb-5" role="alert">
+                There are no blogposts yet...
+            </div>
+
+        {% endif %}
+    </div>
+
+{% endblock %}
