@@ -11,10 +11,36 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html"><i class="fas fa-home"></i></a>
+                    <a class="nav-link" href="/"><i class="fas fa-home"></i></a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html"><i class="fas fa-user-circle"></i></a>
+                <li class="nav-item active login-trigger">
+
+                    {% if app.user %}
+                        <div class="nav-link"><i class="fas fa-user-circle"></i></div>
+                    
+                        <div class="login">
+                            <h6>Welcome {{ app.user.username }}!</h6>
+                            {# {{ dump(app.user) }} #}
+                            {# <a href="">Protected route</a> #}
+
+                            <ul class="float-left">
+                                <li><a href="/admin-panel">Admin panel</a></li>
+                            </ul>
+                            <a href="{{ logout_url("secured_area") }}" class="btn btn-primary float-right mt-3">Logout</a>
+
+                        </div>
+
+                    {% else %}
+
+                    
+                        {# <a href="/connect/auth0" class="btn btn-primary">login</a> #}
+                        <a href="/connect/auth0" class="nav-link"><i class="fas fa-user-circle"></i></a>
+                        
+                    {% endif %}
+
+                   
+                        
+                    </div>
                 </li>
             </ul>
         </div>

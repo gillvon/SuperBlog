@@ -5,7 +5,18 @@
 {% block body %}
 
     <div class="container my-5">
-        <h1 class="mb-5 text-white">Welcome to SuperBlog</h1>
+        
+        {% if app.user %}
+            
+            <h1 class="mb-5 text-white">Welcome {{ app.user.username }}, to Superblog!</h1>
+
+        {% else %}
+
+            <h1 class="mb-5 text-white">Welcome to SuperBlog</h1>
+            
+        {% endif %}
+        
+        
         {% if blogposts %}
         <div class="card-columns mb-5">
             {% for blogpost in blogposts %}

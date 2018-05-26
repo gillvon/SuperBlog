@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Homepage - SuperBlog {% endblock %}
+
+{% block body %}
+
+    <div class="container my-5">
+        <h1 class="mb-5 text-white">Welcome to SuperBlog</h1>
+
+        <h4>{{username}}</h4>
+
+        {% if app.user %}
+            <h4>Welcome, {{ app.user.username }}!</h4>
+            <a href="">Protected route</a>
+            <a href="{{ logout_url("secured_area") }}">
+                <button>Logout</button>
+            </a>
+        {% else %}
+            <h1>Symfony Auth0 Quickstart</h1>
+            <a href="/connect/auth0"><button>Login</button></a>
+        {% endif %}
+        
+    </div>
+
+{% endblock %}

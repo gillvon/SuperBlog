@@ -5,6 +5,7 @@
     use App\Entity\Blogposts;
 
     use Symfony\Component\HttpFoundation\Response;
+    use Symfony\Component\HttpFoundation\Request;
 
     // Routing in comments
     use Symfony\Component\Routing\Annotation\Route;
@@ -143,6 +144,21 @@
             // return new Response(json_encode($blogpost));
             // return new Response($test);
         }
+
+
+
+        /**
+         * @Route("/admin_panel/")
+         * @Method({"GET"})
+         */
+        public function callbackthing(Request $request){
+            $username = $this->getUser()->getUsername();
+            // die(var_dump($this->getUser()));
+            // $username = $request->get('code');
+
+            return $this->render('pages/callback.html.twig', array('username' => $username));
+        }
+
 
 
 
