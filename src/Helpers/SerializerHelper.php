@@ -19,6 +19,10 @@ class SerializerHelper{
         $this->encoders = array(new XmlEncoder(), new JsonEncoder());
         $this->normalizers = array(new ObjectNormalizer());
  
-        return $this->serializer = new Serializer($this->normalizers, $this->encoders);
+        $this->serializer = new Serializer($this->normalizers, $this->encoders);
+    }
+
+    public function getSerializer(){
+        return $this->serializer;
     }
 }

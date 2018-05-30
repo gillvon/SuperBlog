@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} AdminPanel - SuperBlog {% endblock %}
+
+{% block head %}
+    <style>
+        body{
+            background: red;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+    <div class="container my-5">
+        
+        <h1 class="mb-5 text-white">Welcome {{ app.user.username }}, to the Superblog admin panel!</h1>
+        
+        <table class="table table-light table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Views</th>
+                    <th class="text-right"><a href="/admin-panel/blog/create" class="btn btn-info btn-sm">Create a Post <i class="fas fa-plus-square ml-3"></i></a></th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                {% for blogpost in blogposts %}
+                    <tr>
+                        <th scope="row">{{ blogpost.id }}</th>
+                        <td>{{ blogpost.title }}</td>
+                        <td>{{ blogpost.description }}</td>
+                        <td>{{ blogpost.date | date("d/m/Y")}}</td>
+                        <td>{{ blogpost.views }}</td>
+                        <td class="text-right">
+
+                            <a href="/admin-panel/blog/details/{{ blogpost.id }}" class="btn btn-info mr-1"><i class="fas fa-info"></i></a>
+                            <a href="/admin-panel/blog/edit/{{ blogpost.id }}" class="btn btn-secondary mr-1"><i class="fas fa-wrench"></i></a>
+                            <a href="/admin-panel/blog/delete/{{ blogpost.id }}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                        
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+{% endblock %}

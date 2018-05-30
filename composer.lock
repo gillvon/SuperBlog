@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf856908ad76bde9dbfe77d204608244",
+    "content-hash": "6a54b820dbc836409cecf477aba5ea8b",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -3251,16 +3251,16 @@
         },
         {
             "name": "symfony/form",
-            "version": "v4.0.10",
+            "version": "v4.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/form.git",
-                "reference": "64ae89967f0c37ce7c5b719c3179683c1846f0cc"
+                "reference": "0838207670dcf3f18289b636d3f07b660e9f98d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/form/zipball/64ae89967f0c37ce7c5b719c3179683c1846f0cc",
-                "reference": "64ae89967f0c37ce7c5b719c3179683c1846f0cc",
+                "url": "https://api.github.com/repos/symfony/form/zipball/0838207670dcf3f18289b636d3f07b660e9f98d5",
+                "reference": "0838207670dcf3f18289b636d3f07b660e9f98d5",
                 "shasum": ""
             },
             "require": {
@@ -3328,7 +3328,7 @@
             ],
             "description": "Symfony Form Component",
             "homepage": "https://symfony.com",
-            "time": "2018-05-21T10:09:47+00:00"
+            "time": "2018-05-22T13:00:37+00:00"
         },
         {
             "name": "symfony/framework-bundle",

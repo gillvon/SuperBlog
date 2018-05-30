@@ -37,6 +37,19 @@ class Blogposts
     /**
      * @ORM\Column(type="text")
      */
+    private $description;
+
+    public function getDescription(){
+        return $this->description;
+    }
+
+    public function setDescription($description){
+        $this->description = $description;
+    } 
+
+    /**
+     * @ORM\Column(type="text")
+     */
     private $content;
 
     public function getContent(){

@@ -10,12 +10,12 @@
             <div class="col-sm-8 my-5">
                 <div class="card">
 
-                    <img class="card-img-top" src="https://via.placeholder.com/1920x1080" alt="Card image cap">
+                    {# <img class="card-img-top" src="https://via.placeholder.com/1920x1080" alt="Card image cap"> #}
                     
                     <div class="card-body">
                             <h5 class="card-title">{{ blogpost.title }}</h5>
                     
-                        <p class="card-text">{{ blogpost.content }}</p>
+                        <p class="card-text">{{ blogpost.description }}</p>
                         <p class="card-text">
                             <small class="text-muted "><i class="fas fa-eye"></i> {{ blogpost.views }} <br></small> 
                             <small class="text-muted">Posted {{ blogpost.date }} ago</small>
@@ -29,20 +29,20 @@
                 <h5 class="text-white mb-3">Random posts that you might like!</h5>
 
                 {% for post in random %}
-                    <div class="card mb-3">
+                    <a class="card mb-3" href="/blog/{{ post.id }}">
 
-                        <img class="card-img-top" src="https://via.placeholder.com/1920x1080" alt="Card image cap">
+                        {# <img class="card-img-top" src="https://via.placeholder.com/1920x1080" alt="Card image cap"> #}
                         
                         <div class="card-body">
                             <h5 class="card-title">{{ post.title }}</h5>
                         
-                            <p class="card-text">{{ post.content }}</p>
+                            <p class="card-text">{{ post.description }}</p>
                             <p class="card-text">
                                 <small class="text-muted "><i class="fas fa-eye"></i> {{ post.views }} <br></small> 
                                 <small class="text-muted"></small>
                             </p>                
                         </div>
-                    </div>
+                    </a>
                 {% endfor %}
 
             </div>

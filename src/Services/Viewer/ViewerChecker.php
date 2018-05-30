@@ -28,7 +28,6 @@ class ViewerChecker{
     
     public function getViewer($blogpost, $ip){
 
-        $output;        
         $view = $this->em->getRepository(Viewer::class)->findBy([
                 'blogpost'  => $blogpost->getId(),
                 'ip'        => $ip,
@@ -52,16 +51,15 @@ class ViewerChecker{
                 $this->em->remove($view[0]);
                 $this->em->flush();
     
-                $output = true;
+                return true;
     
             } else {
-                $output = false;
+                return false;
             }
         } else {
-            $output = true;
+            return true;
         }
            
-        return $output;
     }
 
     private function setSerializer(){

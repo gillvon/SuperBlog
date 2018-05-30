@@ -45,3 +45,11 @@ services:
         class: App\Services\Viewer\Viewer
         arguments:
             - "@app.viewer_setter"
+
+
+
+    app.filter_words:
+        class: App\Services\Filter\FilterWords
+    
+    app.filter:
+        class: App\Services\Filter\Filter
